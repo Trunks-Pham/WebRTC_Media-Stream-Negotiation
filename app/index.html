@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Calling App</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Socket.IO and main.js scripts -->
+    <script src="/js/socket.io.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <style>
+        /* Custom styles for video and additional tweaks */
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            background-color: #000;
+        }
+        .d-none {
+            display: none;
+        }
+        .caller-list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.2s;
+        }
+        .caller-list li:hover {
+            background-color: #f1f5f9;
+        }
+        .call-btn img, .call-disconnect img {
+            filter: brightness(0) invert(1);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <main class="main-container flex flex-col md:flex-row w-full max-w-7xl mx-auto shadow-xl rounded-lg overflow-hidden bg-white">
+        <!-- Sidebar for Contacts -->
+        <aside class="caller-list-wrapper w-full md:w-1/4 bg-gray-800 text-white p-4">
+            <h1 class="caller-list-heading text-2xl font-bold mb-4">Danh bạ</h1>
+            <ul id="allusers" class="caller-list space-y-2">
+                <!-- Danh sách người dùng sẽ được thêm động bởi JavaScript -->
+            </ul>
+        </aside>
+        <!-- Video Call Section -->
+        <section class="video-call-container flex-1 p-6">
+            <!-- Username Input -->
+            <div class="username-input mb-6 flex gap-2">
+                <input id="username" type="text" placeholder="Nhập tên người dùng" class="flex-1 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <button id="create-user" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Tạo</button>
+            </div>
+            <!-- Video Streams -->
+            <div class="video-streams grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <div class="local-video">
+                    <video id="localVideo" autoplay muted playsinline class="shadow-md"></video>
+                    <p class="text-center text-gray-600 mt-2">Video của bạn</p>
+                </div>
+                <div class="remote-video">
+                    <video id="remoteVideo" autoplay muted playsinline class="shadow-md"></video>
+                    <p class="text-center text-gray-600 mt-2">Video người gọi</p>
+                </div>
+            </div>
+            <!-- End Call Button -->
+            <div class="text-center">
+                <button id="end-call-btn" class="call call-disconnect d-none bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition">
+                    <img src="/images/phone-disconnect.png" alt="Kết thúc cuộc gọi" class="w-6 h-6">
+                </button>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
