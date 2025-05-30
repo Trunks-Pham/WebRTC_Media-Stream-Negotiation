@@ -5,6 +5,8 @@
 WebRTC (Web Real-Time Communication) là một công nghệ mạnh mẽ cho phép truyền thông trực tiếp giữa các trình duyệt mà không cần máy chủ trung gian. Dưới đây là các bước chính trong quá trình thiết lập kết nối truyền thông hai chiều bằng WebRTC.
 
 ---
+### Sản phẩm: https://thaopm-webrtc.onrender.com
+---
 
 ## 1. Media Stream Negotiation
 
