@@ -40,7 +40,7 @@
     <main class="main-container flex flex-col md:flex-row w-full max-w-7xl mx-auto shadow-xl rounded-lg overflow-hidden bg-white">
         <!-- Sidebar for Contacts -->
         <aside class="caller-list-wrapper w-full md:w-1/4 bg-gray-800 text-white p-4">
-            <h1 class="caller-list-heading text-2xl font-bold mb-4">Danh bạ</h1>
+            <h1 class="caller-list-heading text-2xl font-bold mb-4">Phòng Live</h1>
             <ul id="allusers" class="caller-list space-y-2">
                 <!-- Danh sách người dùng sẽ được thêm động bởi JavaScript -->
             </ul>
@@ -56,17 +56,17 @@
             <div class="video-streams grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <div class="local-video">
                     <video id="localVideo" autoplay muted playsinline class="shadow-md"></video>
-                    <p class="text-center text-gray-600 mt-2">Video của bạn</p>
+                    <p class="text-center text-gray-600 mt-2">Người Live</p>
                 </div>
                 <div class="remote-video">
                     <video id="remoteVideo" autoplay muted playsinline class="shadow-md"></video>
-                    <p class="text-center text-gray-600 mt-2">Video người gọi</p>
+                    <p class="text-center text-gray-600 mt-2">Người Tham Gia</p>
                 </div>
             </div>
             <!-- End Call Button -->
             <div class="text-center">
                 <button id="end-call-btn" class="call call-disconnect d-none bg-red-600 text-white p-3 rounded-full hover:bg-red-700 transition">
-                    <img src="/images/phone-disconnect.png" alt="Kết thúc cuộc gọi" class="w-6 h-6">
+                    <img src="/images/phone-disconnect.png" alt="Kết thúc" class="w-6 h-6">
                 </button>
             </div>
         </section>
